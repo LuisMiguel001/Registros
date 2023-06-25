@@ -7,13 +7,13 @@ using Registros.Shared;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var ConStr = builder.Configuration.GetConnectionString("ConStr");
+
+builder.Services.AddDbContextFactory<PrioridadContext>(options => options.UseSqlite(ConStr));
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
-var ConStr = builder.Configuration.GetConnectionString("ConStr");
-
-//builder.Services.AddDbContext<PrioridadContext>(Options => Options.UseSqlite(ConStr));
 
 var app = builder.Build();
 

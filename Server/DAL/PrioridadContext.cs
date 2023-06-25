@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Registros.Shared;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using System.Reflection;
